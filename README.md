@@ -5,4 +5,4 @@ tool to embed images/videos in discord/twitter
 
 tool is currently avaible at `embed.spco.xyz`
 
-to use this tool type something simular to `https://embed.spco.xyz/?url=https://example.com/movie.webm`
+to use this tool type something simular to `https://embed.spco.xyz/?url=https://example.com/movie.webm` or by installing the firefox addon at Exaby/embed-addon

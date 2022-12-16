@@ -31,12 +31,14 @@ const html = `
   <meta name="theme-color" content="${color}">
   <meta property="og:image" content="${embedUrl}">
   <meta property="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/TopLevelVideoDocument.css" />
+  <link rel="stylesheet" href="https://cdn.spco.xyz/embed/image.css" />
   <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/BottomLevelVideoDocument.css" />
 </head>
 
 <body>
-  <img src="${embedUrl}">
+  <div class="c">
+  <img class="im" src="${embedUrl}">
+  </div>
 </body>
 
 </html>
@@ -53,15 +55,16 @@ const html = `
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="${color}">
   <meta property="og:video" content="${embedUrl}">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
   <meta property="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/videocontrols.css" />
   <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/TopLevelVideoDocument.css" />
   <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/BottomLevelVideoDocument.css" />
   <script type="text/javascript" src="https://cdn.spco.xyz/video/j/TopLevelVideoDocument.js"></script>
 </head>
 
 <body>
-  <video src="${embedUrl}" autoplay controls>
+  <video src="${embedUrl}"  height="100%%" autoplay controls>
 </body>
 
 </html>

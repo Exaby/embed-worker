@@ -67,7 +67,7 @@ async function handleRequest(request) {
     <script type="text/javascript" src="https://cdn.spco.xyz/video/j/TopLevelVideoDocument.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:type" content="video.other" />
-    <meta property="og:video:url" content=" ${embedUrl}" />
+    <meta property="og:video:url" content="${embedUrl}" />
     <meta property="og:video:width" content="1280" />
     <meta property="og:video:height" content="720" />
   </head>

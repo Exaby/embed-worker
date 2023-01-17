@@ -24,7 +24,6 @@ async function handleRequest(request) {
   // Check the content type and return an appropriate response
   if (contentType.startsWith('image/') || ((contentType.startsWith('application/octet-stream') || contentType.startsWith('text/')) && (embedUrl.endsWith('.webp') || embedUrl.endsWith('.png') || embedUrl.endsWith('.jpg') || embedUrl.endsWith('.jpeg') || embedUrl.endsWith('.gif') || embedUrl.endsWith('.bmp') || embedUrl.endsWith('.tiff') || embedUrl.endsWith('.svg')))) {
     const html = `
-  
   <head>
     <title>${contentType} | ${status} | ${embedUrl}</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -61,10 +60,7 @@ async function handleRequest(request) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; height=device-height;"></meta>
     <link rel="shortcut icon" href="https://cdn.spco.xyz/assets/img/home/favicon.png"></link>
-    <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/videocontrols.css" />
-    <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/TopLevelVideoDocument.css" />
-    <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/BottomLevelVideoDocument.css" />
-    <script type="text/javascript" src="https://cdn.spco.xyz/video/j/TopLevelVideoDocument.js"></script>
+    <link rel="stylesheet" href="https://cdn.spco.xyz/embed/image.css"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:type" content="video.other" />
     <meta property="og:video:url" content="${embedUrl}" />

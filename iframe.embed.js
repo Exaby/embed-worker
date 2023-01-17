@@ -33,7 +33,7 @@ async function handleRequest(request) {
     <meta name="theme-color" content="${color}">
     <meta property="og:image" content="${embedUrl}">
     <meta property="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="https://cdn.spco.xyz/embed/image.css" />
+    <link rel="stylesheet" href="https://cdn.spco.xyz/embed/iframe.image.css" />
     <link rel="stylesheet" href="https://cdn.spco.xyz/video/c/BottomLevelVideoDocument.css" />
   </head>
   

@@ -71,6 +71,7 @@ async function handleRequest(request) {
     <meta property="og:video:url" content="${embedUrl}" />
     <meta property="og:video:width" content="1280" />
     <meta property="og:video:height" content="720" />
+    ` + (poster ? `<meta property="og:image" content="${poster}" />` : ``) + `
   </head>
   
   <body>

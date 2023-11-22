@@ -5,6 +5,11 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   const url = new URL(request.url)
   const embedUrl = url.searchParams.get('url')
+  let poster;
+  if (url.searchParams.get('img') && url.searchParams.get('img') != "") {
+    // Enable poster image for video
+     poster = url.searchParams.get('img')
+  }
 
   if (!embedUrl) {
     return new Response('Error: No URL provided', {
@@ -69,9 +74,11 @@ async function handleRequest(request) {
   </head>
   
   <body>
-    <video src="${embedUrl}"  height="100%%" autoplay controls>
+  ` + (poster ? `<video class="video" controls poster="${poster}">` : `<video class="video" controls>`) + `
+    <source src="${embedUrl}" type="${contentType}">
+    Your browser does not support the video tag.
+    </video>
   </body>
-  
   </html>
   `
     return new Response(html, {

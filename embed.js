@@ -11,6 +11,12 @@ async function handleRequest(request) {
      poster = url.searchParams.get('img')
   }
 
+  let time;
+  if (url.searchParams.get('time') && url.searchParams.get('time') != "") {
+    // Enable poster image for video
+     time = url.searchParams.get('time')
+  }
+
   if (!embedUrl) {
     return new Response('Error: No URL provided', {
       status: 400,
@@ -65,7 +71,7 @@ async function handleRequest(request) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; height=device-height;"></meta>
     <link rel="shortcut icon" href="https://cdn.spco.xyz/assets/img/home/favicon.png"></link>
-    <link rel="stylesheet" href="https://cdn.spco.xyz/embed/image.css"/>
+    <link rel="stylesheet" href="https://cdn.spco.xyz/embed/video.css"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:type" content="video.other" />
     <meta property="og:video:url" content="${embedUrl}" />
@@ -75,7 +81,7 @@ async function handleRequest(request) {
   </head>
   
   <body>
-  ` + (poster ? `<video class="video" controls poster="${poster}">` : `<video class="video" controls>`) + `
+  ` + (poster ? `<video class="video" autoplay controls poster="${poster}" onloadstart="this.currentTime=${time || 0}">` : `<video class="video" controls onloadstart="this.currentTime=${time || 0}">`) + `
     <source src="${embedUrl}" type="${contentType}">
     Your browser does not support the video tag.
     </video>
